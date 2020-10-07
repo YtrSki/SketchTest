@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad10_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Sketch_Test" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="820" height="1180"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2jO-BT-SNY">
+                                <rect key="frame" x="20" y="0.0" width="780" height="955"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C5b-TT-jyS" customClass="SketchView" customModule="Sketch">
+                                <rect key="frame" x="20" y="0.0" width="780" height="955"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="baX-BJ-VnE">
+                                <rect key="frame" x="293" y="1080" width="235" height="32"/>
+                                <segments>
+                                    <segment title="赤"/>
+                                    <segment title="緑"/>
+                                    <segment title="　青"/>
+                                    <segment title="　黒　"/>
+                                </segments>
+                                <connections>
+                                    <action selector="colorSegment:" destination="BYZ-38-t0r" eventType="valueChanged" id="4mH-h0-Wp6"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="EN9-wB-Ihe">
+                                <rect key="frame" x="100" y="1025" width="145" height="32"/>
+                                <segments>
+                                    <segment title="ペン"/>
+                                    <segment title="消しゴム"/>
+                                </segments>
+                                <connections>
+                                    <action selector="toolSegment:" destination="BYZ-38-t0r" eventType="valueChanged" id="ecU-nM-Xwy"/>
+                                </connections>
+                            </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5iV-MG-xPV">
+                                <rect key="frame" x="608" y="1025" width="91" height="32"/>
+                                <segments>
+                                    <segment title="太い"/>
+                                    <segment title="細い"/>
+                                </segments>
+                                <connections>
+                                    <action selector="thicknessSegment:" destination="BYZ-38-t0r" eventType="valueChanged" id="rqS-TT-eUs"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfR-4I-gPe">
+                                <rect key="frame" x="665" y="1096" width="101" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="101" id="3BC-Yz-lQ4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="全消し"/>
+                                <connections>
+                                    <action selector="clearButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iJG-jx-NdA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5iV-MG-xPV" secondAttribute="trailing" constant="121" id="12f-OD-Zjy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="baX-BJ-VnE" secondAttribute="bottom" constant="69" id="27P-Lc-sq6"/>
+                            <constraint firstItem="jfR-4I-gPe" firstAttribute="top" secondItem="5iV-MG-xPV" secondAttribute="bottom" constant="40" id="6WM-di-AMb"/>
+                            <constraint firstItem="2jO-BT-SNY" firstAttribute="leading" secondItem="C5b-TT-jyS" secondAttribute="leading" id="71a-eM-0ww"/>
+                            <constraint firstItem="EN9-wB-Ihe" firstAttribute="top" secondItem="2jO-BT-SNY" secondAttribute="bottom" constant="70" id="9uK-w7-Wda"/>
+                            <constraint firstItem="C5b-TT-jyS" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-225" id="CWL-OE-QIk"/>
+                            <constraint firstItem="C5b-TT-jyS" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="DTY-wj-Ush"/>
+                            <constraint firstItem="C5b-TT-jyS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Fp1-c2-DWw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jfR-4I-gPe" secondAttribute="bottom" constant="40" id="HmN-l6-2Op"/>
+                            <constraint firstItem="2jO-BT-SNY" firstAttribute="bottom" secondItem="C5b-TT-jyS" secondAttribute="bottom" id="I6D-v8-An8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jfR-4I-gPe" secondAttribute="trailing" constant="54" id="Pyq-nx-7rL"/>
+                            <constraint firstItem="2jO-BT-SNY" firstAttribute="trailing" secondItem="C5b-TT-jyS" secondAttribute="trailing" id="XXq-eP-6mU"/>
+                            <constraint firstItem="baX-BJ-VnE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="293" id="XkU-JA-zPg"/>
+                            <constraint firstItem="2jO-BT-SNY" firstAttribute="top" secondItem="C5b-TT-jyS" secondAttribute="top" id="Xza-2J-qH3"/>
+                            <constraint firstItem="EN9-wB-Ihe" firstAttribute="baseline" secondItem="5iV-MG-xPV" secondAttribute="baseline" id="hKY-MI-xJt"/>
+                            <constraint firstItem="EN9-wB-Ihe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="l9c-U9-d0y"/>
+                            <constraint firstItem="EN9-wB-Ihe" firstAttribute="bottom" secondItem="5iV-MG-xPV" secondAttribute="bottom" id="o3U-Nh-hiJ"/>
+                            <constraint firstItem="C5b-TT-jyS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="p5R-tb-M5j"/>
+                            <constraint firstItem="2jO-BT-SNY" firstAttribute="centerX" secondItem="baX-BJ-VnE" secondAttribute="centerX" id="xgu-Aq-0G8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="canvasView" destination="2jO-BT-SNY" id="Kmn-c0-uIp"/>
+                        <outlet property="sketchView" destination="C5b-TT-jyS" id="yhR-Kb-MOR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.70731707317074" y="114.40677966101696"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
